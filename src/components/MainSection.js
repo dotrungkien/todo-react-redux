@@ -38,11 +38,6 @@ export default class MainSection extends Component {
         const { todos, actions } = this.props
         const { filter } = this.state
 
-        if (!todos) return (
-            <section className='main'>
-            </section>
-        )
-
         const filteredTodos = todos.filter(TODO_FILTERS[filter])
         const markedCount = todos.reduce((count, todo) =>
             todo.marked ? count + 1 : count,
